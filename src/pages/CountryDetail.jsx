@@ -84,43 +84,43 @@ const CountryDetail = () => {
               {data.name.common}
             </h1>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-[5rem] mt-[10px] sm:mt-[20px] 2xl:mt-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-[5rem] mt-[10px] sm:mt-[20px] 2xl:mt-10">
               <div className="">
-                <h3 className="text-[15px] sm:text-[18px] ">
+                <h3 className="text-[15px] sm:text-[18px]  pt-1 sm:pt-2 ">
                   <span className="font-semibold"> Native name:</span>{" "}
                   {nativeNames}
                 </h3>
-                <h3>
-                  <span className="font-semibold">Population:</span>{" "}
+                <h3 className="pt-1 sm:pt-2">
+                  <span className="font-semibold  ">Population:</span>{" "}
                   {numberWithCommas(data.population)}
                 </h3>
-                <h3 className="text-[15px] sm:text-[18px]">
+                <h3 className="text-[15px] pt-1 sm:pt-2 sm:text-[18px]">
                   <span className="font-semibold"> Region:</span> {data.region}
                 </h3>
-                <h3 className="text-[15px] sm:text-[18px] ">
+                <h3 className="text-[15px] pt-1 sm:pt-2 sm:text-[18px] ">
                   <span className="font-semibold"> Sub Region:</span>{" "}
                   {data.subregion}
                 </h3>
-                <h3 className="text-[15px] sm:text-[18px]">
+                <h3 className="text-[15px] pt-1 sm:pt-2 sm:text-[18px]">
                   {" "}
                   <span className="font-semibold">Capital:</span> {data.capital}
                 </h3>
               </div>
               <div className="">
-                <h3 className="text-[15px] sm:text-[18px]">
+                <h3 className="text-[15px] pt-1 sm:pt-2 sm:text-[18px]">
                   <span className="font-semibold">Top Level Domain:</span>{" "}
                   {topLevelDomain}
                 </h3>
-                <h3 className="text-[15px] sm:text-[18px] ">
+                <h3 className="text-[15px] pt-1 sm:pt-2 sm:text-[18px] ">
                   <span className="font-semibold">Currencies:</span>{" "}
                   {currencies}
                 </h3>
-                <h3 className="text-[15px] sm:text-[18px]">
+                <h3 className="text-[15px] pt-1 sm:pt-2 sm:text-[18px]">
                   <span className="font-semibold">Languages:</span> {languages}
                 </h3>
               </div>
             </div>
-            <div className="grid sm:grid-cols-2  sm:gap-2 items-center mt-[20px] sm:mt-[40px] 2xl:mt-20">
+            <div className="grid sm:grid-cols-2  sm:gap-2 items-center mt-[10px] sm:mt-[40px] 2xl:mt-20">
               <h3 className="font-semibold text-[15px] sm:text-[18px]">
                 Border Countries:
               </h3>
