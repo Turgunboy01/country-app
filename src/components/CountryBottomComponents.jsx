@@ -3,6 +3,7 @@ import { numberWithCommas } from "../pages/Countries";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeProvider";
 import { motion } from "framer-motion";
+import notFound from "../../public/page.png";
 
 const CountryBottomComponents = ({ filteredCountries, loading }) => {
   const navigate = useNavigate();
@@ -11,13 +12,12 @@ const CountryBottomComponents = ({ filteredCountries, loading }) => {
   if (loading) {
     return (
       <div className="w-full h-screen flex justify-center items-center">
-        <div class="🤚">
-          <div class="👉"></div>
-          <div class="👉"></div>
-          <div class="👉"></div>
-          <div class="👉"></div>
-          <div class="🌴"></div>
-          <div class="👍"></div>
+        <div class="spinner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
     );
@@ -72,7 +72,9 @@ const CountryBottomComponents = ({ filteredCountries, loading }) => {
           </div>
         ))
       ) : (
-        <div className="col-span-full text-center text-lg">Not found</div>
+        <div className="col-span-full text-center flex items-center justify-center text-lg">
+          <img src={notFound} alt="" />
+        </div>
       )}
     </div>
   );
