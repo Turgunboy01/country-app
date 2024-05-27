@@ -3,21 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import { numberWithCommas } from "./Countries";
 import { ThemeContext } from "../context/ThemeProvider";
 import { motion } from "framer-motion";
+import { ProductsContext } from "../context/AllProducts";
 
 const CountryDetail = () => {
   const { dark } = useContext(ThemeContext);
   const [data, setData] = useState(null);
   const { name } = useParams();
-  const [getAllProduct, setGetAllProduct] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("https://restcountries.com/v3.1/all");
-      const data = await res.json();
-      setGetAllProduct(data);
-    };
-    fetchData();
-  }, []);
+  const { getAllProduct } = useContext(ProductsContext);
 
   useEffect(() => {
     const foundData = getAllProduct.find((item) => item.name.common === name);

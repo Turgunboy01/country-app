@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import CountryTopComponents from "../components/CountryTopComponents";
 import CountryBottomComponents from "../components/CountryBottomComponents";
+import { ProductsContext } from "../context/AllProducts";
 
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 const Countries = () => {
-  const [getAllProduct, setGetAllProduct] = useState([]);
+  const { getAllProduct } = useContext(ProductsContext);
+
   const [search, setSearch] = useState("");
 
   const [categories, setCategories] = useState([]);
@@ -27,15 +29,6 @@ const Countries = () => {
       listUniqueCategories();
     }
   }, [getAllProduct]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("https://restcountries.com/v3.1/all");
-      const data = await res.json();
-      setGetAllProduct(data);
-    };
-    fetchData();
-  }, []);
 
   const handleSearch = getAllProduct.filter((country) =>
     country.name.common.toLowerCase().includes(search.toLowerCase())
