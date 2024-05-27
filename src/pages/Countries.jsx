@@ -10,7 +10,7 @@ export function numberWithCommas(x) {
 }
 
 const Countries = () => {
-  const { getAllProduct } = useContext(ProductsContext);
+  const { getAllProduct, loading } = useContext(ProductsContext);
 
   const [search, setSearch] = useState("");
 
@@ -48,7 +48,10 @@ const Countries = () => {
         setChangeCategory={setChangeCategory}
       />
       <div className="h-[100vh] overflow-y-scroll divScroll">
-        <CountryBottomComponents filteredCountries={filteredCountries} />
+        <CountryBottomComponents
+          filteredCountries={filteredCountries}
+          loading={loading}
+        />
       </div>
     </div>
   );
